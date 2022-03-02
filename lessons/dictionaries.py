@@ -38,6 +38,7 @@ print(schools)
 schools = {} #Same as dict()
 print(schools)
 
+
 # Alternatively, initialize key-value pairs
 schools = {"UNC": 19400, "Duke": 6717, "NCSU": 26150}
 print(schools)
