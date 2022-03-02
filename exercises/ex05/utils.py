@@ -36,6 +36,3 @@ def concat(first: list[int], second: list[int]) -> list[int]:
         first.append(second[i])
         i += 1 
     return first
-
-    
-        

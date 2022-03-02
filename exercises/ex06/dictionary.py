@@ -5,7 +5,6 @@ __author__ = "730526509"
 
 def invert(x: dict[str, str]) -> dict[str, str]:
     """Inverts dict key and vaule."""
-    none: dict[str, str] = dict()
     ix = {v: k for k, v in x.items()}
     x_index = len(x)
     ix_index = len(ix)
@@ -13,10 +12,10 @@ def invert(x: dict[str, str]) -> dict[str, str]:
         print(ix) 
     else:
         raise KeyError("Error")
-    return none   
+    return ix  
 
 
-def favorite_color(x: dict[str, str]):
+def favorite_color(x: dict[str, str]) -> str:
     """Chooses most repeated color."""
     count: dict[str, int] = {}
     for key in x:
