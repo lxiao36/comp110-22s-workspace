@@ -40,9 +40,14 @@ def count(x: list[str]) -> dict[str, int]:
         else:
             dic[num] = 1 
     return(dic)
-    
 
-  
+def woo(x: dict[str, int], y: dict[str, int]) -> list[str]:
+    result = []
+    for budget in x:
+        for item in y:
+            if x[budget] > y[item]:
+                result.append(budget)
+    return result
 
 
 
