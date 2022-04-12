@@ -8,20 +8,11 @@ from csv import DictReader
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """Read the rows of a csv into a 'table'."""
     result: list[dict[str, str]] = []
-   
-    # Open a handle to the data file 
     file_handle = open(filename, "r", encoding="utf8")
-    
-    # Prepare to read the data file as a CSV rather than just strings
     csv_reader = DictReader(file_handle)
-
-    # Reac each row of the CSV line-by-line
     for row in csv_reader:
         result.append(row)
-
-    # Close the file when we're done, to free its resources
     file_handle.close()
-
     return result 
 
 
@@ -76,6 +67,7 @@ def concat(x: dict[str, list[str]], y: dict[str, list[str]]) -> dict[str, list[s
 
 
 def count(x: list[str]) -> dict[str, int]:
+    """Counts the list on how many times a value reoccurs."""
     result: dict[str, int] = {}
     for thing in x:
         if thing in result: 
@@ -83,3 +75,19 @@ def count(x: list[str]) -> dict[str, int]:
         else:
             result[thing] = 1 
     return result 
+
+
+def common_value(x: list[str]):
+    """Chooses the most repeated value."""
+    result: dict[str, int] = {}
+    for thing in x:
+        if thing in result: 
+            result[thing] += 1 
+        else:
+            result[thing] = 1 
+    
+    h_count = list(result.values())
+    top = max(h_count)
+    for v in x:
+        if result[v] == top:
+            return v
